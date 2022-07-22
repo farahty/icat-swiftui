@@ -14,6 +14,8 @@ enum APIError: Error {
 }
 
 enum Constents {
+    
+    // main end point
     static let endpoint = "https://api.thecatapi.com/v1/breeds"
     
     // not used

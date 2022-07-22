@@ -15,6 +15,8 @@ enum APIError: Error {
 
 enum Constents {
     static let endpoint = "https://api.thecatapi.com/v1/breeds"
+    
+    // not used
     static let apiKey = "ffdfcec6-18ca-46b0-a513-2ca63feb2056"
 }
 

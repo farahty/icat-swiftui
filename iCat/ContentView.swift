@@ -7,10 +7,29 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    
+    @StateObject var vm = CatViewModel()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            Group {
+                List(vm.cats) { cat in
+                    NavigationLink{
+                        CatDetailsView(cat: cat)
+                    } label: {
+                        CatListItemView(cat: cat)
+                    }
+                }
+                
+            }
+            .navigationTitle("iCat")
+            .task {
+                await vm.fetchCats()
+            }
+        }
+        
     }
 }
 
